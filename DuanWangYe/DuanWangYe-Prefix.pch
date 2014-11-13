@@ -1,0 +1,31 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+//添加预编译
+
+#define UMENG_APPKEY                @"51a0df8e56240b7b2102fe59"
+#define kDeviceWidth                [UIScreen mainScreen].bounds.size.width
+#define KDeviceHeight               [UIScreen mainScreen].bounds.size.height
+#define is_iPhone5                  ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define IS_IPHONE_5                 (fabs((double)[[UIScreen mainScreen] bounds].size.height - (double)568) < DBL_EPSILON)
+#define IntergerToString(num)       [NSString stringWithFormat:@"%d", num]
+
+#define DestionMixUrl          @"http://221.7.213.133/ibless/api/getsms.aspx?page=%d&count=%d"
+#define DestionQiuUrl       @"http://221.7.213.133/ibless/api/getsms.aspx?type=60&page=%d&count=%d"
+#define DestionJokeUrl      @"http://221.7.213.133/ibless/api/getsms.aspx?type=35&page=%d&count=%d"
+#define DestionEnterUrl     @"http://221.7.213.133/ibless/api/getsms.aspx?type=42&page=%d&count=%d"
+#define DestionClassicUrl   @"http://221.7.213.133/ibless/api/getsms.aspx?type=19&page=%d&count=%d"
